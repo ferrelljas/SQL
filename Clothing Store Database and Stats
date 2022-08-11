@@ -1,0 +1,28 @@
+--Create a clothing store database
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, name TEXT, cost INTEGER, size TEXT, color TEXT);
+
+INSERT INTO clothing VALUES (1, 'shirt', 10, 'small', 'blue');
+INSERT INTO clothing VALUES (2, 'pants', 12, 'medium', 'red');
+INSERT INTO clothing VALUES (3, 'hat', 7, 'small', 'black');
+INSERT INTO clothing VALUES (4, 'socks', 5, 'large', 'white');
+INSERT INTO clothing VALUES (5, 'shoes', 35, 'large', 'black');
+INSERT INTO clothing VALUES (6, 'belt', 17, 'medium', 'black');
+INSERT INTO clothing VALUES (7, 'undergarments', 10, 'medium', 'white');
+INSERT INTO clothing VALUES (8, 'tshirt', 8, 'small', 'white');
+INSERT INTO clothing VALUES (9, 'boots', 50, 'large', 'blue');
+INSERT INTO clothing VALUES (10, 'sandals', 20, 'large', 'rainbow');
+INSERT INTO clothing VALUES (11, 'purse', 100, 'large', 'red');
+INSERT INTO clothing VALUES (12, 'coat', 34, 'small', 'purple');
+INSERT INTO clothing VALUES (13, 'spring jacket', 17, 'medium', 'blue');
+INSERT INTO clothing VALUES (14, 'sweater', 20, 'medium', 'red');
+INSERT INTO clothing VALUES (15, 'blazer', 45, 'medium', 'black');
+
+--display the database where items cost 10 dollars or more. 
+SELECT * FROM clothing WHERE cost >= 10; 
+
+--display the database ordered by price in ascending order.
+SELECT * FROM clothing ORDER by cost asc;
+
+--what is the avg price of all items?
+SELECT avg(cost) FROM clothing;
