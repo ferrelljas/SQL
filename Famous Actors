@@ -1,0 +1,39 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE actor (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER);
+
+INSERT INTO actor (name, age) VALUES ('Robert Downey Jr', 57);
+INSERT INTO actor (name, age) VALUES ('Leonardo DiCaprio', 47);
+INSERT INTO actor (name, age) VALUES ('Tom Cruise', 60);
+INSERT INTO actor (name, age) VALUES ('Johnny Depp', 59);
+
+
+CREATE TABLE movies_shows (id INTEGER PRIMARY KEY AUTOINCREMENT, person_id integer, name TEXT); 
+
+INSERT INTO movies_shows (person_id, name) VALUES (4, 'Iron Man');
+INSERT INTO movies_shows (person_id, name) VALUES (3, 'Inception');
+INSERT INTO movies_shows (person_id, name) VALUES (2, 'Top Gun');
+INSERT INTO movies_shows (person_id, name) VALUES (1, 'Sweeney Todd');
+INSERT INTO movies_shows (person_id, name) VALUES (4, 'Sherlock Holmes');
+INSERT INTO movies_shows (person_id, name) VALUES (3, 'Titanic');
+INSERT INTO movies_shows (person_id, name) VALUES (2, 'Mission Impossible');
+INSERT INTO movies_shows (person_id, name) VALUES (1, 'Pirates');
+INSERT INTO movies_shows (person_id, name) VALUES (4, 'Avengers');
+INSERT INTO movies_shows (person_id, name) VALUES (3, 'Wolf on Wall Street');
+INSERT INTO movies_shows (person_id, name) VALUES (2, 'The Mummy');
+INSERT INTO movies_shows (person_id, name) VALUES (1, 'The Lone Ranger');
+
+--display the 2 tables with a join to show actors name next to their movie
+
+SELECT a.name, m.name 
+FROM actor a
+JOIN movies_shows m
+ON a.id=m.person_id;
+
+--display an additional query to only display Robert Downey Jr
+
+SELECT a.name, m.name
+FROM actor a
+JOIN movies_shows m
+ON a.id=m.person_id 
+WHERE a.name = 'Robert Downey Jr'
